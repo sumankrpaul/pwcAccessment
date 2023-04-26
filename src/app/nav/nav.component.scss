@@ -5,7 +5,7 @@ $textColour: #fff;
     &-bar{
         display: flex;
         justify-content: space-between;
-        padding: 0 10px;
+        padding: 0 15px;
         background-color: $navColour;
     }
     &-list{
@@ -15,24 +15,32 @@ $textColour: #fff;
         margin: 0;
         li{
             display: inline-block;
-            border-right: 1px solid;
-            color:$textColour;
+            border-right: 1px solid #fff;
             &:last-child{
                 border-right: none;
             }
             &:hover{
               background-color: lighten($color: $navColour, $amount: 5)  
             }
+            .active{
+                background-color: darken($color: $navColour, $amount: 5);
+            }
             a{
                 display: inline-block;
                 cursor: pointer;
                 text-decoration: none;
                 padding: 15px;
+                color:$textColour;
+
+                &:link,&:visited,&:active {
+                    text-decoration: none;
+                }
              }
         }
     }
     &-date{
+        display: inline-block;
+        padding: 15px;
         color: $textColour;
-        text-align: center;
     }
 }
