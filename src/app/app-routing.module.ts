@@ -9,8 +9,8 @@ const routes: Routes = [
   { path: 'users', component: UserInfoComponent },
   { path: 'contacts', component: ContactComponent },
   { path: 'about', component: AboutUsComponent },
-  { path:'**', component: ErrorPageComponent },
   { path: '', pathMatch:'full', redirectTo:'users'},
+  { path:'**', component: ErrorPageComponent },
 ];
 
 @NgModule({

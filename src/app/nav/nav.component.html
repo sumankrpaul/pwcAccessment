@@ -4,5 +4,5 @@
         <li><a routerLink="/about" routerLinkActive="active"> About Us </a></li>
         <li><a routerLink="/contacts" routerLinkActive="active"> Contact </a></li>
     </ul>
-    <span class="nav-date"> Date </span>
+    <span class="nav-date"> {{ today | date:'dd-MMMM-YY'}} </span>
 </nav>
