@@ -11,6 +11,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RequestInterceptorService } from './RequestInterceptorService';
+import { AddressPipe } from './pipes/address.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RequestInterceptorService } from './RequestInterceptorService';
     UserInfoComponent,
     AboutUsComponent,
     ContactComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    AddressPipe
   ],
   imports: [
     BrowserModule,

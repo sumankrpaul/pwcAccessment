@@ -1,7 +1,7 @@
 <div class="user-info">
     <div class="table-title">
         <h3>Users List</h3>
-        <input type="text" placeholder="search" class="search-box">
+        <input type="text" placeholder="search by name or username" class="search-box" #searchBox (keyup)="searchList(searchBox.value)">
     </div>
     <div>
         <table class="info-table">
@@ -14,46 +14,31 @@
                 <th>Company</th>
             </thead>
             <tbody>
-                <tr>
-                    <td>name</td>
-                    <td>username</td>
-                    <td>email</td>
-                    <td>address</td>
-                    <td>phone number</td>
-                    <td>company</td>
+                <tr *ngFor="let user of showUserList">
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.address | address }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.company.name }}</td>
                 </tr>
-                <tr>
-                    <td>name</td>
-                    <td>username</td>
-                    <td>email</td>
-                    <td>address</td>
-                    <td>phone number</td>
-                    <td>company</td>
-                </tr>
-                <tr>
-                    <td>name</td>
-                    <td>username</td>
-                    <td>email</td>
-                    <td>address</td>
-                    <td>phone number</td>
-                    <td>company</td>
-                </tr>
+                
             </tbody>
             <tfoot>
                 <tr>
                    <td colspan="6">
-                    total rows 10
+                    total rows {{ showUserList.length }}
                    </td> 
                 </tr>
             </tfoot>
         </table>
         <div class="pagination-container">
             <div class="pagination-control">
-                <button class="pagination-control-left">
+                <button class="pagination-control-left" [disabled]="currentPage==1" (click)="paginateUserList(currentPage-1)">
                     <fa-icon [icon]="faArrowLeft"></fa-icon>
                 </button>
-                <span class="pagination-control-pagevalue"> 1/2 </span>
-                <button class="pagination-control-right">
+                <span class="pagination-control-pagevalue"> {{currentPage}}/{{totalPage}} </span>
+                <button class="pagination-control-right" [disabled]="currentPage==totalPage" (click)="paginateUserList(currentPage+1)">
                     <fa-icon [icon]="faArrowRight"></fa-icon> 
                 </button>
             </div>

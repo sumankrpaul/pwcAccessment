@@ -16,6 +16,7 @@ $textColor: rgb(46, 46, 46);
 
 .info-table {    
     width: 100%;
+    min-width: 654px;
     border-collapse: collapse;
     thead {
         background-color: $tableColor;
@@ -30,7 +31,7 @@ $textColor: rgb(46, 46, 46);
     tbody{
         tr{
             border-bottom: solid 1px darken($color: $tableColor, $amount: 10);
-            &:nth-child(2){
+            &:nth-child(even){
                 background-color: lighten($color: $tableColor, $amount: 50);
             }
             td{
