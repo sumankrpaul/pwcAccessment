@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { faArrowRight,faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { UsersService } from '../services/users.service';
-import User from '../interfaces/user';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import User from 'src/app/interfaces/user';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-user-info',
@@ -9,8 +9,8 @@ import User from '../interfaces/user';
   styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent {
-  faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
+  faArrowLeft = faArrowLeft;
   maxListItem = 7;
   rawUserList: User[] = [];
   
